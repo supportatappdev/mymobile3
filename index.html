@@ -10,26 +10,47 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Page title set in pageTitle directive -->
     <title page-title></title>
-
-<!--     Font awesome
-    <link href="/nfi/assets/inspinia/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-    Bootstrap and Fonts
-    <link href="/nfi/assets/inspinia/css/bootstrap.min.css" rel="stylesheet">
-
-    Main Inspinia CSS files
-    <link href="/nfi/assets/inspinia/css/animate.css" rel="stylesheet">
-    <link id="loadBefore" href="/nfi/assets/inspinia/css/style.css" rel="stylesheet">
- -->
-</head>
+   </head>
 
 <!-- ControllerAs syntax --> 
 <!-- Main controller with serveral data used in Inspinia theme on diferent view -->
 <body ng-controller="MainCtrl as main">
 
+<div class="middle-box text-center loginscreen  animated fadeInDown" ng-show="showLogin">
+	<div>
+		<div>
+		<img src="http://70.35.204.78/support/scp/logo.php" style="height:90px">
+		</div>
+		<h3>Mobile Sales Force</h3>
+		<p>Login in. To see it in action.</p>
+		<p>
+		<div class="alert alert-error" id="errorSignin" style="display:none;padding:0px 5px 1px 1px">
+			<font color="red" id="errorMsgSignin">
+			    {{responseDetails}}
+			</font><ul><li></li></ul></font>
+		</div>
+		</p>
+		<form class="m-t" role="form">
+			<div class="form-group">
+				<input  ng-model="username" name="username" class="form-control" placeholder="Username"
+					>
+			</div>
+			<div class="form-group">
+				<input ng-model="pwd" name="password"  type="password"  class="form-control" placeholder="Password">
+			</div>
+			<button ng-click="login()"  class="btn btn-primary block full-width m-b">
+			<i ng-show="signin" class="fa fa-spinner fa-spin"></i> Login
+			</button>
+			<a href="#"><small>Forgot password?</small></a>
+
+		</form>
+		<p class="m-t">
+		
+		</p>
+	</div>
+</div>
 <!-- Main view  -->
 <div ui-view></div>
 <link href="build/css/app.css" rel="stylesheet">
@@ -41,10 +62,12 @@
 
 <!-- Anglar App Script -->
 <script src="config/app.js"></script>
+<script src="login/config.js"></script>
 <script src="config/config.js"></script>
 <script src="config/service.js"></script>
 <script src="config/directives.js"></script>
 <script src="config/controllers.js"></script>
+<script src="login/ctrl.js"></script>
 
 </body>
 </html>
