@@ -26,10 +26,8 @@
 		<h3>Mobile Sales Force</h3>
 		<p>Login in. To see it in action.</p>
 		<p>
-		<div class="alert alert-error" id="errorSignin" style="display:none;padding:0px 5px 1px 1px">
-			<font color="red" id="errorMsgSignin">
-			    {{responseDetails}}
-			</font><ul><li></li></ul></font>
+		<div ng-show="responseDetails.length > 0" class="alert alert-error"  style="padding:0px 5px 1px 1px">
+			<font color="red"><ul><li>{{responseDetails}}</li></ul></font>
 		</div>
 		</p>
 		<form class="m-t" role="form">
