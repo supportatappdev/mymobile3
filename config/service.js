@@ -399,7 +399,9 @@ mymobile3.service('Cache', function() {
         localStorage.setItem('Cache', angular.toJson(map));
     };
     this.loggedInUser = function() {
-        return JSON.parse(angular.fromJson(localStorage.$_u));
+        if(localStorage.$_u) {
+            return JSON.parse(angular.fromJson(localStorage.$_u));
+        }
     };
     this.loggedInUserAppId = function() {
         var _xUser = this.loggedInUser();
