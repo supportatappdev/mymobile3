@@ -17,7 +17,7 @@ function getBaseURL() {
 	      (location.port && ":" + location.port) ;
 }; 
 function getAppName(p) {
-   return "/Done";
+   return "/";
 }
 var _appUrl = getBaseURL()+getAppName(window.location.pathname);
 
