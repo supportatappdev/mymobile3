@@ -8,11 +8,29 @@ angular
        $scope.showLogin = true;
     } else {
         console.log(Cache.loggedInUser());
+        $scope.showLogin = false;
+        $location.path("/index/main");
     }
+    
+     $scope.logout = function() {
+         	$http.get(_appUrl+'/api/logout').
+	  success(function(data, status, headers, config) {
+		  localStorage.clear();
+			var rdata = angular.fromJson(data);
+			if(rdata.status !=="S") {
+				console.log("**** Error in logout *****"+result);
+			}
+				$scope.showLogin = true;
+	  }).
+	  error(function(data, status, headers, config) {
+		  localStorage.clear();
+		  $location.path(getAppName(window.location.pathname));
+	  });
+     }
      $scope.login  = function() {
             $scope.signin  = true;
             var data = $.param({
-                us: $scope.username,
+                un: $scope.username,
                 pw: $scope.pwd
             });
         
@@ -21,8 +39,7 @@ angular
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                 }
             }
-
-            $http.post('/api/login', data, config)
+            $http.post(_appUrl+'/api/login', data, config)
             .success(function (data, status, headers, config) {
                 $scope.signin = false;
                 if(data.status =="S") {
