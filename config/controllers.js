@@ -9,7 +9,6 @@ angular
     } else {
         console.log(Cache.loggedInUser());
     }
-    
      $scope.login  = function() {
             $scope.signin  = true;
             var data = $.param({
@@ -31,7 +30,7 @@ angular
                         localStorage.setItem("$_u",JSON.stringify(_u));
 							window.location.href = "index.html";
   					} else {
-  						$scope.responseDetails = rdata.error;
+  						$scope.responseDetails = data.error;
   					}
             })
             .error(function (data, status, header, config) {
