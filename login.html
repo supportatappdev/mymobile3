@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mymobile3">
 <head>
 
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <title>SFA</title>
 <link href="build/css/app.css" rel="stylesheet">
 </head>
-<body class="gray-bg">
+<body class="gray-bg" ng-controller='LoginCtrl'>
  
 <div class="middle-box text-center loginscreen  animated fadeInDown">
 	<div>
@@ -22,18 +22,17 @@
 			<font color="red" id="errorMsgSignin"><ul><li></li></ul></font>
 		</div>
 		</p>
-		<form class="m-t" role="form" action="index.html">
+		<form class="m-t" role="form">
 			<div class="form-group">
-				<input id="username" name="username" class="form-control" placeholder="Username"
-					>
+				<input id="username" name="username" ng-model='username'
+				class="form-control" placeholder="Username">
 			</div>
 			<div class="form-group">
-				<input id="pwd" name="password" type="password"  class="form-control" placeholder="Password">
+				<input id="pwd" name="password" ng-model='username' type="password"  class="form-control" placeholder="Password">
 			</div>
-			<button id="submit" type="submit" class="btn btn-primary block full-width m-b">
+			<button ng-click="login()" type="submit" class="btn btn-primary block full-width m-b">
 			<i id="spinner" class="fa fa-spinner fa-spin"></i> Login
 			</button>
-			<a href="#"><small>Forgot password?</small></a>
 
 		</form>
 		<p class="m-t">
@@ -82,4 +81,3 @@ $(function(){
 </script>
 	
 </body>
-</html>
