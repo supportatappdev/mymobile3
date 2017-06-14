@@ -3,14 +3,14 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.phonegap.example"
     versionCode = "10"
-    version     = "1.2.2" >
+    version     = "1.2.4" >
  
 <!-- versionCode is optional and Android only -->
 
-  <name>mymobile3</name>
+  <name>SridaIT SFA</name>
 
   <description>
-      mymobile3
+      Dukes SFA
   </description>
 
   <author href="https://build.phonegap.com" email="support@dennisone.in">
